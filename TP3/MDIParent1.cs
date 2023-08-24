@@ -13,7 +13,7 @@ namespace TP3
 {
     public partial class MDIParent1 : Form
     {
-        private int childFormNumber = 0;
+        public int childFormNumber = 0;
 
         public MDIParent1()
         {
@@ -22,10 +22,17 @@ namespace TP3
 
         private void ShowNewForm(object sender, EventArgs e)
         {
-            Form1 Frm = new Form1();
-            Frm.MdiParent = this;
-            Frm.Text = "Pequeño formulario " + childFormNumber++;
-            Frm.Show();
+
+            
+            if (MdiChildren.Length == 0) {
+                // Create and show the new child form
+                Form1 childForm = new Form1();
+                childForm.MdiParent = this;
+                childForm.Text = "Pequeño formulario N° " + childFormNumber++;
+                childForm.Show();
+            }
+
+
         }
 
         private void OpenFile(object sender, EventArgs e)
@@ -53,6 +60,7 @@ namespace TP3
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        
         }
 
         private void CutToolStripMenuItem_Click(object sender, EventArgs e)

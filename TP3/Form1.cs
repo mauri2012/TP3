@@ -119,6 +119,63 @@ namespace TP2
         private void BSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+            
+        }
+
+        private void TNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+            {
+                // Set the Handled property to true to cancel the key press
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("El campo Nombre solo acepta letras", "Error Nombre", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void TApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+            {
+                // Set the Handled property to true to cancel the key press
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("El campo Apellido solo acepta letras", "Error Apellido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void TDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+            {
+                // Set the Handled property to true to cancel the key press
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("El campo DNI solo acepta numeros", "Error DNI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void TTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+            {
+                // Set the Handled property to true to cancel the key press
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("El campo Telefono solo acepta Numeros", "Error Telefono", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

@@ -111,6 +111,7 @@
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(100, 23);
             TNombre.TabIndex = 5;
+            TNombre.KeyPress += TNombre_KeyPress;
             // 
             // TDni
             // 
@@ -120,6 +121,7 @@
             TDni.Size = new Size(100, 23);
             TDni.TabIndex = 6;
             TDni.TextChanged += textBox2_TextChanged;
+            TDni.KeyPress += TDni_KeyPress;
             // 
             // TApellido
             // 
@@ -128,6 +130,7 @@
             TApellido.Name = "TApellido";
             TApellido.Size = new Size(100, 23);
             TApellido.TabIndex = 7;
+            TApellido.KeyPress += TApellido_KeyPress;
             // 
             // TGuardar
             // 
@@ -163,6 +166,7 @@
             TTelefono.Name = "TTelefono";
             TTelefono.Size = new Size(100, 23);
             TTelefono.TabIndex = 10;
+            TTelefono.KeyPress += TTelefono_KeyPress;
             // 
             // LNaranja
             // 
