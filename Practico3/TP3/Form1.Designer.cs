@@ -93,7 +93,7 @@
             LApellido.Size = new Size(51, 15);
             LApellido.TabIndex = 3;
             LApellido.Text = "Apellido";
-            LApellido.Click += label4_Click;
+            
             // 
             // LNombre
             // 
@@ -120,7 +120,7 @@
             TDni.Name = "TDni";
             TDni.Size = new Size(100, 23);
             TDni.TabIndex = 6;
-            TDni.TextChanged += textBox2_TextChanged;
+       
             TDni.KeyPress += TDni_KeyPress;
             // 
             // TApellido
@@ -144,7 +144,7 @@
             TGuardar.Text = "Guardar";
             TGuardar.TextAlign = ContentAlignment.MiddleRight;
             TGuardar.UseVisualStyleBackColor = true;
-            TGuardar.Click += button1_Click;
+            TGuardar.Click += TGuardar_Click;
             // 
             // TEliminar
             // 
@@ -187,7 +187,7 @@
             LVisa.TabIndex = 12;
             LVisa.Text = "Visa";
             LVisa.UseVisualStyleBackColor = true;
-            LVisa.CheckedChanged += checkBox2_CheckedChanged;
+          
             // 
             // LMastercard
             // 
@@ -302,7 +302,7 @@
             ImeMode = ImeMode.Hiragana;
             Name = "Form1";
             Text = "pequeño formulario";
-            Load += Form1_Load;
+            
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

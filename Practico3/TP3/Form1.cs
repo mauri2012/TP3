@@ -10,37 +10,21 @@ namespace TP2
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+  
+
+        private void TGuardar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            double parseValue;
-            bool DNIValidate = !double.TryParse(this.TDni.Text, out parseValue);
+           
             MsgBoxResult ask;
 
 
 
-            inputValidation(DNIValidate, "DNI", this.TDni);
-            inputValidation(!this.ValidateString(this.TApellido.Text), "Apellido", this.TApellido);
-            inputValidation(!this.ValidateString(this.TNombre.Text), "Nombre", this.TNombre);
+            
 
 
-            this.LModificar.Text = this.TNombre.Text + " " + this.TApellido.Text;
+            
 
-            if (this.TApellido.Text == "" || this.TApellido.Text == "" || this.TApellido.Text == "")
+            if (string.IsNullOrWhiteSpace(TApellido.Text) || string.IsNullOrWhiteSpace(TNombre.Text) || string.IsNullOrWhiteSpace(TDni.Text) || string.IsNullOrWhiteSpace(TTelefono.Text))
             {
                 MessageBox.Show("el formulario no puede contener campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -52,33 +36,15 @@ namespace TP2
                 {
 
                     MessageBox.Show("El cliente " + this.TNombre.Text + " " + this.TApellido.Text + " se inserto Correctamente ", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.LModificar.Text = this.TNombre.Text + " " + this.TApellido.Text;
                 }
+                
 
             }
         }
 
-        private void inputValidation(bool validacion, string campo, TextBox textBoxN)
-        {
-            double parseValue;
-            string type;
-            if (!double.TryParse(textBoxN.Text, out parseValue))
-            {
-                type = "numeric";
-            }
-            else
-            {
-                type = "char";
-            }
-            if (validacion)
-            {
-                textBoxN.Text = "";
-                MessageBox.Show(campo + " field only allows " + type + " values", campo + "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private bool ValidateString(string input)
-        {
-            return input.All(c => char.IsLetter(c) || c == ' ');
-        }
+  
+  
 
         private void TEliminar_Click(object sender, EventArgs e)
         {
@@ -94,10 +60,7 @@ namespace TP2
             }
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void RBVaron_CheckedChanged(object sender, EventArgs e)
         {
