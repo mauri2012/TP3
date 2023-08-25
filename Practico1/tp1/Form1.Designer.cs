@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
-            Guardar = new Button();
-            textBox2 = new TextBox();
+            TApellido = new TextBox();
+            BEliminar = new Button();
+            BGuardar = new Button();
+            TNombre = new TextBox();
             label2 = new Label();
             textBox3 = new TextBox();
-            Salir = new Button();
+            BSalir = new Button();
             SuspendLayout();
             // 
             // label1
@@ -48,41 +48,43 @@
             label1.TabIndex = 0;
             label1.Text = "Nombre";
             // 
-            // textBox1
+            // TApellido
             // 
-            textBox1.Location = new Point(89, 99);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(113, 23);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
+            TApellido.Location = new Point(89, 99);
+            TApellido.Name = "TApellido";
+            TApellido.Size = new Size(113, 23);
+            TApellido.TabIndex = 1;
+           
+            TApellido.KeyPress += TApellido_KeyPress;
             // 
-            // button1
+            // BEliminar
             // 
-            button1.AccessibleName = "BEliminar";
-            button1.Location = new Point(148, 163);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 4;
-            button1.Text = "Eliminar";
-            button1.Click += button1_Click;
+            BEliminar.AccessibleName = "BEliminar";
+            BEliminar.Location = new Point(148, 163);
+            BEliminar.Name = "BEliminar";
+            BEliminar.Size = new Size(75, 23);
+            BEliminar.TabIndex = 4;
+            BEliminar.Text = "Eliminar";
+            BEliminar.Click += BEliminar_Click;
             // 
-            // Guardar
+            // BGuardar
             // 
-            Guardar.AccessibleName = "BGuardar";
-            Guardar.Location = new Point(22, 163);
-            Guardar.Name = "Guardar";
-            Guardar.Size = new Size(75, 23);
-            Guardar.TabIndex = 3;
-            Guardar.Text = "Guardar";
-            Guardar.UseVisualStyleBackColor = true;
-            Guardar.Click += Guardar_Click;
+            BGuardar.AccessibleName = "BGuardar";
+            BGuardar.Location = new Point(22, 163);
+            BGuardar.Name = "BGuardar";
+            BGuardar.Size = new Size(75, 23);
+            BGuardar.TabIndex = 3;
+            BGuardar.Text = "Guardar";
+            BGuardar.UseVisualStyleBackColor = true;
+            BGuardar.Click += BGuardar_Click;
             // 
-            // textBox2
+            // TNombre
             // 
-            textBox2.Location = new Point(89, 60);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(113, 23);
-            textBox2.TabIndex = 5;
+            TNombre.Location = new Point(89, 60);
+            TNombre.Name = "TNombre";
+            TNombre.Size = new Size(113, 23);
+            TNombre.TabIndex = 5;
+            TNombre.KeyPress += TNombre_KeyPress;
             // 
             // label2
             // 
@@ -102,33 +104,33 @@
             textBox3.Size = new Size(167, 112);
             textBox3.TabIndex = 7;
             // 
-            // Salir
+            // BSalir
             // 
-            Salir.AccessibleName = "Salir";
-            Salir.Location = new Point(315, 199);
-            Salir.Name = "Salir";
-            Salir.Size = new Size(75, 23);
-            Salir.TabIndex = 8;
-            Salir.Text = "Salir";
-            Salir.UseVisualStyleBackColor = true;
-            Salir.Click += Salir_Click;
+            BSalir.AccessibleName = "Salir";
+            BSalir.Location = new Point(315, 199);
+            BSalir.Name = "BSalir";
+            BSalir.Size = new Size(75, 23);
+            BSalir.TabIndex = 8;
+            BSalir.Text = "Salir";
+            BSalir.UseVisualStyleBackColor = true;
+            BSalir.Click += Salir_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(484, 261);
-            Controls.Add(Salir);
+            Controls.Add(BSalir);
             Controls.Add(textBox3);
             Controls.Add(label2);
-            Controls.Add(textBox2);
-            Controls.Add(Guardar);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(TNombre);
+            Controls.Add(BGuardar);
+            Controls.Add(BEliminar);
+            Controls.Add(TApellido);
             Controls.Add(label1);
             Name = "Form1";
             Text = "Mi primer form";
-            Load += Form1_Load;
+          
             ResumeLayout(false);
             PerformLayout();
         }
@@ -143,5 +145,10 @@
         private Label label2;
         private TextBox textBox3;
         private Button Salir;
+        private TextBox TApellido;
+        private Button BGuardar;
+        private TextBox TNombre;
+        private Button BEliminar;
+        private Button BSalir;
     }
 }

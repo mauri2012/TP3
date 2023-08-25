@@ -7,22 +7,23 @@ namespace tp1
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+ 
 
+    
+
+        private void BGuardar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TApellido.Text)|| string.IsNullOrWhiteSpace(TNombre.Text)){
+                MessageBox.Show("el formulario no puede contener campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
+            }
+            else
+            {
+                this.textBox3.Text = this.TNombre.Text + " " + this.TApellido.Text;
+            }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Guardar_Click(object sender, EventArgs e)
-        {
-            this.textBox3.Text = this.textBox2.Text + " " + this.textBox1.Text;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void BEliminar_Click(object sender, EventArgs e)
         {
             this.textBox3.Clear();
         }
@@ -30,6 +31,34 @@ namespace tp1
         private void Salir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void TApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+            {
+               
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("El campo Apellido solo acepta letras", "Error Apellido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void TNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+            {
+             
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("El campo Nombre solo acepta letras", "Error Nombre", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
